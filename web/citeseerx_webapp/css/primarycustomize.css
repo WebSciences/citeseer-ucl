@@ -1,0 +1,1110 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+
+/* 1.0.0.0 Body {{{ */ 
+/* ----------------------------------------------- */
+body {
+	text-align:center;
+    font-size:70%;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    line-height:1.3em;
+	background-image:url(../images/gradient.gif);
+	background-repeat:repeat-x; 
+}
+/* }}} */
+
+/* 2.4.0.0 MISC: Link Properties {{{ */
+/* ----------------------------------------------- */
+/*
+ * The order by which you define links is important. It should be Link, Visited, Hover, Active. If you rearrange them, your hover effects may stop working, as they will be overridden.
+ */
+a:link {
+    text-decoration:none;
+    color:#00b;
+    border-bottom:1px dotted #bbb;
+}
+ 
+a:visited {
+    text-decoration:none;
+    color:#639;
+    border-bottom:1px dotted #bbb;
+}
+
+/*a:hover, a:visited:hover {
+    background-color:#eee;
+    color:#555;	
+}*/
+
+/* This is used for links on a dark background. */
+a.lightlink:link {
+    text-decoration:none;
+    color:#cff;
+	font-weight:bold;	
+}
+
+a.citation_only {
+    color:#6666ff;
+}
+ 
+a.lightlink:visited {
+    text-decoration:none;
+    color:#c9f;
+	font-weight:bold;
+}
+
+a.lightlink:link:hover, a.lightlink:visited:hover {
+    background-color:#eee;
+    color:#555;
+	font-weight:bold;	
+}
+
+a.citation_only {
+    color:#6666ff;
+}
+
+a.tooltip{
+    position:relative; /*this is the key*/
+    z-index:24;
+	background-image:none;
+    text-decoration:none;
+    border:0;
+}
+
+a.tooltip:hover{
+	z-index:25;
+	background-image:none;
+    text-decoration:none;
+    border:0;
+}
+
+a.tooltip span {
+    top:2em; 
+	left:2em; 
+	width:30em;
+    border:1px solid #0cf;
+	display: none;
+}
+
+a.tooltip:hover span{ /*the span will display just on :hover state*/
+    top:2em; 
+	left:2em; 
+	width:30em;
+    display:block;
+    position:absolute;
+    border:1px solid #0cf;
+    background-color:#f2f8fd;
+	color:#000;
+	text-align:left;
+	padding:0.5em;	
+}
+
+/* Next are the properties of links that are images. */
+a img {border:0} /* Removes the default border */
+a.remove {border:0} /* Removes the customized border */
+/* }}} */
+
+/* 2.5.0.0 MISC: Image Properties {{{ */
+/* ----------------------------------------------- */
+
+/* }}} */
+
+/* 2.6.0.0 MISC: Forms {{{ */
+/* ----------------------------------------------- */
+fieldset.rightAligned {
+    text-align:right;
+	margin:0;
+	padding:0.3em 0.5em 0 0;
+    border-top:none;
+	border-right:1px #ccc solid;
+	border-bottom:1px #ccc solid;
+	border-left:1px #02176e solid;
+}
+
+textarea.csx, input.csx {
+	font-family:arial, Helvetica, sans-serif;
+	font-size:1em;
+	border:1px solid;
+	border-color:#666 #ccc #ccc #666;
+	padding:0.1em;
+}
+
+button.csx {
+	font-family:arial, Helvetica, sans-serif;
+	font-size:80%;
+	border:1px solid;
+	border-color:#666 #ccc #ccc #666;
+}
+
+textarea, input { /* this could be removed and the feedback form would still look good */
+	font-family:arial, Helvetica, sans-serif;
+	font-size:1em;
+	border:1px solid;
+	border-color:#666 #ccc #ccc #666;
+	padding:0.1em;
+}
+
+textarea:focus, input:focus {
+  background-color:#ffc;
+}
+
+.button { /* used in any kind of button (search, submit, login/out) */
+    color:#003466;
+	background-color:#8fc0f0;
+	border:1px solid #003466;
+}
+/* }}} */
+
+/* 3.1.0.0 HEADER: Primary Menu {{{ */
+/* ----------------------------------------------- */
+/* This is for the top navigation bar in the primary, secondary, tertiary, etc. pages.
+ */
+#top_nav_bar {
+    z-index:1;
+	border-bottom:1px solid #fff; /* horizontal line under top navigation */
+	padding-top:0.3em;
+	padding-bottom:0.5em;
+}
+
+.top_nav {
+    text-align:left;
+}
+
+.top_nav ul li {
+    display:inline;		
+}
+
+#top_nav_bar ul li :link {
+    color:#fff;
+	border:0;
+	padding-left:1em;
+	padding-right:1em;
+}
+
+#top_nav_bar ul li :visited {
+	border:0;
+	padding-left:1em;
+	padding-right:1em;
+}
+
+#top_nav_bar ul li :hover {
+	border:0;
+	background-color:#69C;
+	padding-left:1em;
+	padding-right:1em;
+}
+
+#top_nav_bar_main {
+     width:70%;
+     float:left;  
+}
+
+#top_nav_bar_user {
+     float:right;
+     width:29%;
+     text-align:right;
+     color:#fff;
+}
+
+#cartspan {
+	padding:0.2em 1em 0.2em 1em;
+}
+#userspan {
+	padding:0.2em 1em 0.2em 1em;
+	margin-right:1em;
+    border-left:1px solid #FFF;
+}
+
+.top_nav ul li :link {
+    color:#fff;
+	padding-top:0.3em;
+	padding-bottom:0.5em;
+}
+
+.top_nav ul li :visited {
+	padding-top:0.3em;
+	padding-bottom:0.5em;
+}
+
+.top_nav ul li :hover {
+	padding-top:0.3em;
+	padding-bottom:0.5em;
+}
+
+.top_nav ul li :visited:hover {
+    color:#fff;
+	padding-top:0.3em;
+	padding-bottom:0.5em;
+}
+/* }}} */
+
+/* 3.2.0.0 HEADER: Logos {{{ */
+/* ----------------------------------------------- */
+#logo {
+	text-align:left;
+	margin:15px 0 10px 1em;
+	float:left;
+}
+
+#logo img {
+    width:281px;
+    height:50px;
+    border:none;
+    background: url(../images/logos/applogow.gif);	
+}
+/* }}} */
+
+/* 3.3.0.0 HEADER: Search {{{ */
+/* ----------------------------------------------- */
+#search_meta_box {
+	float:right;
+	position:relative;
+	padding-bottom:1em;
+}
+/* }}} */
+
+
+
+/*
+ * Before we declare properties to the specific divisions/sections, let's assign properties to the styled elements that are used in more than one section.
+ */
+
+/*
+ * First, are block elements.
+ */
+h1,h2,h3,h4,h5,h6,p,blockquote,label,ol,dl,address {
+   margin:0.5em 0;
+}
+
+/* This allows the list to be displayed similarly in FireFox and IE. */
+ul.formating { 
+    padding:0;
+    margin:0.5em; 
+    list-style-position:inside; 
+} 
+
+li,dd {
+    margin-left:1em;
+}
+
+/* 
+ * Next are the sets of character properties.
+ */
+.char1 {
+	color:#000;
+	font-weight:normal;
+	font-size:1em;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    line-height:1.5em;
+}
+
+/* This is for a set of character properties that is inline. */
+.char2 {
+	color:#000;
+	font-weight:normal;
+	font-style:italic;
+	font-size:1em;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    line-height:1.5em;
+	display:inline;
+}
+
+/* 
+ * Next are the sets of paragraph properties.
+ */
+.para1 {
+	width:95%;
+	padding:0 0.5em 0 0;
+	margin:0.5em 5px 0.5em 10px;
+}
+
+/* this is a set of paragraph properties within the content_boxs (sponsors, mirrors). */
+.para2 {
+	width:95%;
+	text-align:center;
+	padding:0 0.5em 0 0.5em;
+	margin:0 0 0.5em 0;
+	clear:both;	
+}
+
+.para3 {
+	width:95%;
+	text-align:right;
+	padding:0 0.5em 0 0.5em;
+	margin:0.5em 0 0.5em 0;
+}
+
+/* 2.3.0.0 MISC: Paragraph Properties {{{ */
+/* ----------------------------------------------- */
+.para4 { /* used in conclusion of search results, in abstract and info. bar for docdetails */
+	padding:1em;
+	margin:0;
+}
+.para5 { /* used in conclusion of search results, in abstract and info. bar for docdetails */
+	text-align:left;
+	padding:1em;
+	margin:0;
+}
+/* }}} */
+
+.parafirstletters {
+	margin-top:1em;
+}
+
+.para_book {
+	line-height:1.7em;
+}
+
+em.firstletter {
+	line-height:1.7em;
+	font-family:Century Gothic;
+	padding:0 0.5em 0 0;
+	font-size:200%; 
+	color:#004293;
+	font-style:normal;
+    font-weight:normal;
+	float:left;
+}
+
+.para_centered {
+	text-align:center;
+}
+
+.para2nomargin {
+	text-align:center;
+	padding:0 0.5em 0 0.5em;
+	margin:0;
+}
+
+.char_colored {
+	color:#c7831e;
+}
+
+
+/*
+ * Ok, Now we declare properties to the specific divisions/sections.
+ * Next is the header containing logo, search, h1, meta-nav, and main_menu.
+ */
+
+/*
+ * header>meta_nav is used for meta links like log in / log out, help, about
+ */
+#meta_nav {
+      position:absolute;
+ 	top:0;
+ 	right:25px;
+ 	width:200px;
+ 	z-index:2;
+	float:right;
+	clear:right;
+
+}
+
+#meta_nav ul li :link, #meta_nav ul li :visited {
+    background-color:#fff;
+}
+
+#meta_nav ul li :link:hover, #meta_nav ul li :visited:hover { 
+    background-color:#69C;
+    color:#fff;
+}
+
+
+/*
+ *  Class nav: Used to create a list of links inside a div. The container should have nav 
+ *  as a class; the container can change some properties to create a diferent view of the list.
+ */
+
+.nav {
+	width:100%;
+	text-align:right;
+	line-height:3em;
+}
+
+.nav ul {
+    margin: 0;
+    color: #02176e;
+	font-family: tahoma, verdana, geneva, arial, helvetica, sans-serif;
+   	font-size: .75em;
+    letter-spacing: 2px;
+	font-weight: bold;
+	padding:0;
+}
+
+.nav ul li {
+    display:inline;
+}
+
+.nav ul li :link, .nav ul li :visited {
+	padding:0.2em 1em;
+	color:#003466;
+	text-decoration:none;
+}
+
+.nav ul li :link:hover, .nav ul li :visited:hover {
+	color:#fff;
+    text-decoration:none;
+}
+
+.nav li.last :link, .nav li.last :visited { 
+    border-right:none;
+}
+
+.nav ul li :link, .nav ul li :visited {
+	margin-top:0.5em;
+	padding:0.2em 1em;
+	color:#003466;
+	text-decoration:none;
+    border-bottom:0;
+}
+
+.nav_box {
+	border:1px #8fc0f0 solid;
+	padding:0.5em;
+	margin:0.5em;
+}
+
+/* 0.0.0.0 Primary Page Navigation {{{ */
+/* ----------------------------------------------- */
+#primary_tabs-n-content {
+    width:100%;
+    margin:0 0.5em 0 auto;
+} 
+
+#primary_tabs_container {
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+#primary_tabs {
+    width:100%;
+	margin:0;
+	padding:0;
+	line-height:normal;	
+    float:left;
+}
+
+#primary_tabs ul {
+    margin:0;
+    background-color:transparent;
+    padding:10px 10px 0;
+    list-style:none;
+    background:url("../images/tab_back_tr.gif") repeat-x bottom;	
+}
+
+#primary_tabs li {
+	display:inline;
+}
+
+#primary_tabs a.page_tabs {
+	width:0.1em; /* Fixes clickable region for IE/Win */
+    float:left;	
+    margin:0;
+    padding:0 0 0 9px;	
+	background:url("../images/tab_all_lft.gif") no-repeat left top;	
+	/*border-bottom:1px solid #000;  when no current page on first page called */	  
+}
+
+#primary_tabs > ul a.page_tabs {width:auto} /* IE/Win 6 and lower don't understand this */
+
+#primary_tabs a.page_tabs span {
+    float:left;
+	background:url("../images/tab_all_rght.gif") no-repeat right top;
+	margin:0;
+	padding:5px 15px 4px 6px;
+	display:block;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#primary_tabs a.page_tabs span {float:none;}
+/* End IE5-Mac hack */
+
+#primary_tabs #current a.page_tabs {
+    background:url("../images/tab_on_lft.gif") no-repeat left top;
+	border-width:0; /* when no current page on first page called */
+}
+#primary_tabs #current a.page_tabs span {
+    background:url("../images/tab_on_rght.gif") no-repeat right top;
+	padding-bottom:5px;
+}
+
+#primary_tabs a.page_tabs:hover {
+    background-position:0% -150px;
+}	
+#primary_tabs a.page_tabs:hover span {
+    background-position:100% -150px;
+	color:#000;
+}
+/* }}} */
+
+/* 4.2.0.0 CONTENT: Page Header {{{ */
+/* ----------------------------------------------- */
+#introduction { /* used on citearticles page */
+	color:#000;
+    background-color:#ffc;
+    margin:0;
+	padding:0.5em;
+}
+
+.information_bar { /* used on citearticles page */
+	background-color:#dedede;
+	margin:0;
+	padding:0.5em;
+}
+.information_bar2 { /*  */
+	background-color:#ffc;
+	margin:0;
+	margin-bottom:0.5em;
+	padding:0.5em;
+}
+/* }}} */
+
+/* 4.4.6.3 CONTENT: CSx: docdetail: Content Boxes {{{ */
+/* ----------------------------------------------- */
+#right-sidebar { /* contains the document statistics and pop distribution */
+    background:#fff;
+	margin:0.5em;
+}
+/* }}} */
+
+#primary_content {
+    text-align:left;
+	margin:0;
+	background:#ffffff;
+	padding:0.3em 0.5em 1em 0;
+	border-top:none;
+	border-right:1px #ccc solid;
+	border-bottom:1px #ccc solid;
+	border-left:1px #02176e solid;
+	clear:both;
+}
+
+#primary_content.nopad { /* used when columns are shaded */
+    text-align:left;
+	margin:0;
+	background:#fff;
+	padding:0;
+	border-top:none;
+	border-right:1px #ccc solid;
+	border-bottom:1px #ccc solid;
+	border-left:1px #02176e solid;
+	clear:both;
+}
+/*
+ * header>h1 is for the primary header "Scientific Lit. Digital ...".
+ */
+.primaryheader {
+    font:1.5em Verdana, Arial, Helvetica, sans-serif;
+    color:#02176e;
+    padding:0;
+    font-weight:bold;
+    margin:1em 0 1em 1em;
+    text-align:left;
+
+}
+
+/*
+ * Next is the container for the main menu.
+ */
+#main_menu {
+    background:#f7f7f7;
+    border:1px solid #000;
+    clear:both;
+}
+
+#main_menu ul {
+    float:left;
+   	font-size:0.85em;
+}
+
+#main_menu ul li :link, #main_menu ul li :visited {
+    background-color:#f7f7f7;
+}
+
+#main_menu ul li :link:hover, #main_menu ul li :visited:hover { 
+    color:#fff;
+    background-color:#69C;
+}
+
+#main_menu ul li a.active, #main_menu ul li a:hover.active {
+    color:#fff;
+	text-decoration:none;
+	background:#c33;
+	text-align:left;
+	text-transform:uppercase;
+}
+
+/*
+ * Next is the meat and potatoes, which contains the content boxes.
+ */
+#center-content {
+    background:#fff;
+}
+
+/* 4.3.0.0 CONTENT: Content Boxes {{{ */
+/* ----------------------------------------------- */
+.content_box {
+	width:336px; /* to accommodate graphformat image */
+    border:1px solid #CCC;
+    margin:1em;
+    margin-bottom:2em; /*new*/	
+}
+
+#team.content_box {
+	width:175px; /* to accommodate sponsor images */
+    border:1px solid #CCC;
+    margin:1em;
+    margin-bottom:2em; /*new*/	
+    padding-bottom:1em;	
+}
+	
+.content_box h2 {
+    font:1.1em Verdana, Arial, Helvetica, sans-serif;
+    color:#02176e;
+    background-color:#8fc0f0;
+    padding:0 0.5em;
+    font-weight:bold;
+    margin:0;
+    border-bottom:2px solid #999;
+    text-align:left;
+    text-transform:uppercase;
+}
+
+.content_box ul {
+	margin-left:1.5em;
+	padding-left:1em;
+	text-indent:-1em;
+}
+/* }}} */
+
+
+/* 4.4.6.0 CONTENT: CSx: docdetail: MISC {{{ */
+/* ----------------------------------------------- */
+.topic_heading { /* for the secondary headings in summary page */
+	color:#000;
+	font-size:1.1em;
+	font-weight:bold;
+/*  Please note the 3-pixel fix in the head portion of primary pages. */	
+/*	zoom:1;  Internet Explorer Conditional Comment (IECC) */
+}
+/* }}} */
+
+/* 2.1.1.0 MISC: Block Elements: Lists {{{ */
+/* ----------------------------------------------- */
+ul.formating { /* This allows the list to be displayed similarly in FireFox and IE. */
+    padding:0;
+    margin:0.5em; 
+    list-style-position:inside; 
+} 
+
+li,dd {
+    margin-left:1em;
+}
+
+.nofrills_list { /* utilized in the citation list on docdetails */
+	list-style-type:none;
+}
+
+.padded { /* use this to pad list on search results and ancillary pages and author, venue on summary */
+	margin-bottom:0.2em;
+}
+
+.padded2 { /* use this to pad list on search results and ancillary pages and author, venue on docdetail */
+	margin-bottom:0.2em;
+	margin-left:1em; /* for Firefox */	
+	text-indent:-1em; /* for IE */
+}
+
+#citedlinks li { /* used on citearticles page */
+	display:inline;
+	margin:0 -0.6em 0 -0.6em;
+	padding:0 0.2em 0 0.2em;
+}
+
+#currentlink { /* current page indication for cited pages*/
+	color:#000;
+	padding:0 0.3em 0 0.3em;
+	margin:0;
+	font-weight:bold;
+    text-align:center;
+	background:#ffca7a url(images/grdnt_orwh.gif) repeat-x;	
+}
+
+ol.numbered_list { /* used on statistics pages */
+	margin:1em 0 0 1em;
+	padding:0;
+	list-style-type:decimal;
+    list-style-position:inside; 
+}
+
+ol.numbered_list li { /* used on statistics pages */
+	margin-bottom:1em;
+}
+
+.listformating li { /* utilized in the citation list on docdetails */
+  margin-top: 1em;
+}
+/* }}} */
+
+/* 2.2.0.0 MISC: Character Properties {{{ */
+/* ----------------------------------------------- */
+.smallcapped { /* used on team page */
+	color:#1080d3;
+	font-size:1.5em;
+	font-variant:small-caps;
+}
+
+.char_bold { /* used on team and feedback pages */
+	font-weight:bold;
+}
+
+.char_emphasized { /* used for citation numbers in summary page and most cited page */
+	color:#000;
+	font-weight:bold;
+	display:inline;
+	white-space:pre;
+}
+
+.color1 { /* used on help-search page */
+	color:#1081d4;
+}
+
+.color2 { /* used for the word NEW in list of features in ancillary pages and used on help-search page */
+	color:#c7831e;
+}
+
+.color3 { /* used on help-search page */
+	color:#000;
+	background-color:#ffc;
+}
+
+.color4 { /* color also used in author for search results and venue in docdetails */
+	color:#6f6f6f;
+}
+
+.char_indented { /* used in help-search page and for author and venue in docdetails */
+	margin-left:3em;
+}
+/* }}} */
+
+
+/*
+ * Use it to give myciteseer a prodominant title properties.
+ */
+h2.predominantheading {
+    height:20px;
+    font:1.1em Verdana, Arial, Helvetica, sans-serif;
+    color:#fff;
+    background-color:#000;
+    padding:0;
+    font-weight:bold;
+    margin:0;
+    border-bottom:2px solid #999;
+    text-align:right;
+    text-transform:uppercase;
+}
+
+.content_box ul {
+	margin-left:1.5em;
+	padding-left:1em;
+	text-indent:-1em;
+	}
+
+/* 
+ * Next is the box that is intended to have the content that isn't whithin other boxes.
+ * It usually goes inside a box.
+ */
+.content {
+	width:95%;
+	clear:both;	
+	color:#000;
+	font-weight:normal;
+	font-size:12px;
+	padding:10px 0 0 0;
+	margin-left:8px;
+}
+
+.content h2 {
+	font-size:14px;
+	color:#222;
+	padding-left:15px;
+	margin-top:5px;
+}
+
+.content h3 {
+	font-size:12px;
+	color:#EE6700;
+	padding-left:15px;
+	font-weight:bold;
+}
+
+.content p {	
+	padding-left:15px;
+	margin:5px 0;
+}
+
+/* 5.0.0.0 FOOTER {{{ */
+/* ----------------------------------------------- */
+#footer {
+    width:100%;
+    float:left;
+    background:#fff;
+    text-align:center;
+	clear:both; /* No floating elements allowed on either the left or the right side */
+}
+
+#footer p {
+	color:#999;
+	font-size:0.9em;
+}
+
+#ist {
+    width:65px;
+    height:25px;
+}
+/* }}} */
+
+/* 6.0.0.0 SCRAP {{{ */
+/* ----------------------------------------------- */
+/*#tab_container {
+	width:405px;
+	margin:0;
+	padding:0;
+}
+
+#tabs {
+    width:100%;
+	margin:0;
+	padding:0;
+	line-height:normal;
+	background:#fff url("../images/tab_back.gif")
+      repeat-x bottom;
+    float:left;
+}
+
+#tabs ul {
+    margin:0;
+    padding:10px 10px 0;
+    list-style:none;
+}
+#tabs li {
+    float:left;
+    margin:0;
+    padding:0 0 0 9px;
+	background:url("../images/tab_norm_lft.gif")
+      no-repeat left top;
+}
+
+#tabs a {
+    float:left;
+    display:block;
+	background:url("../images/tab_norm_rght.gif")
+      no-repeat right top;
+	margin:0;
+	padding:5px 15px 4px 6px;
+}
+*/
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a {float:none;}
+/* End IE5-Mac hack */
+
+/*#tabs #current {
+    background-image:url("../images/tab_on_lft.gif");
+}
+#tabs #current a {
+    background-image:url("../images/tab_on_rght.gif");
+	padding-bottom:5px;
+} 
+*/
+/* }}} */
+
+/* 7.0.0.0 Feedback {{{ */
+/* ----------------------------------------------- */
+
+#feedbackform {
+    margin:0 auto; /*center hack*/
+    width: 50%;
+}
+
+#feedbackform fieldset {
+    border:none;
+}
+
+#feedbackform .oneField {
+    padding:0.5em;
+}
+
+.labelsRightAligned label.preField {
+    float: left;
+    display: block; 
+    min-width: 13em;    
+    margin: 0;
+    padding: 0 2px 0 0;
+}
+
+#feedbackform .errMsg {
+    padding-right:0.5em;
+    color:#900;
+}
+
+#feedbackform .verification {
+}
+
+#feedbackform .actions {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#feedback_error {
+    color: #000;
+    margin:0 auto; /*center hack*/
+    width: 50%;
+}
+
+/* }}} */
+
+.imageinbox {
+    border-style: none;
+    padding:0.5em 0.5em 1em 0.5em;
+	text-align:center;
+	clear:both;
+}
+
+.imageinbox :link:hover, .imageinbox :visited:hover {
+    background-color:transparent; /* Removes the customized background color */
+    text-decoration:none;
+}
+
+#nsf {
+    width:90px;
+    height:89px;
+	padding: 0.5em 0.5em 0 0.5em;	
+}
+
+#msr {
+    width:113px;
+    height:26px;
+	padding: 0.5em 0.5em 0 0.5em;
+}
+
+#nasa {
+    width:63px;
+    height:51px;
+	padding: 0.5em 0.5em 0 0.5em;
+}
+
+/* column container */
+.colmask {
+    width:100%; /* width of whole page */   
+    float:left;
+    position:relative; /* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    overflow:hidden; /* This chops off any overhanging divs */
+}
+
+/* common column settings */
+.colright, .colmid, .colleft {
+    width:100%; /* width of page */
+    float:left;
+    position:relative;
+}
+
+.col1, .col2, .col3 {
+    text-align:left;
+    float:left;
+    position:relative;
+    padding:0 0 1em 0; /* no left and right padding on columns, we just make them narrower 
+
+instead. only padding top and bottom is included here, make it whatever value you need */
+    overflow:hidden;
+}
+
+/* 3 Column blog style settings */
+.blogstyle {
+    background:#F2F2F2; /* right column background colour */
+}
+
+.blogstyle .colmid {
+    right:25%; /* width of the right column */
+    background:#f7f7f7; /* center column background colour */
+}
+
+.blogstyle .colleft {
+    right:25%; /* width of the middle column */
+    background:#fff; /* left column background colour */
+}
+
+.blogstyle .col1 {
+    width:46%; /* width of center column content (column width minus padding on either 
+
+side) */
+    left:52%; /* 100% plus left padding of center column */
+}
+
+.blogstyle .col2 {
+    width:21%; /* Width of left column content (column width minus padding on either side) 
+
+*/
+    left:56%; /* width of (right column) plus (center column left and right padding) plus 
+
+(left column left padding) */
+}
+
+.blogstyle .col3 {
+    width:21%; /* Width of right column content (column width minus padding on either side) 
+
+*/
+    left:60%; /* Please make note of the brackets here: (100% - left column width) plus 
+
+(center column left and right padding) plus (left column left and right padding) plus 
+
+(right column left padding) */
+}
+
+
+
+
+.smallcapped { 
+	color:#1080d3;
+	font-size:1.5em;
+	font-variant:small-caps;
+}
+
+.portrait_container {
+	border:1px solid #ccc;
+	margin-bottom:1em;
+	clear:both;
+}
+
+.portrait_text {
+	margin:0.5em;
+}
+
+.portrait {
+	float:left;
+	clear:left;
+	margin-right:0.5em;
+}
+
+.para_left {
+	text-align:left;
+	padding:0 0.5em 0 0.5em;
+}
+
+#mycsxlogo {
+    width: 239px;
+    height: 50px;
+    border: none;
+	text-align:left;
+	margin:0 0.5em 0.5em 0;
+	float:left;
+}
+
+.pushdown {
+	margin:2em 0 0 0;
+}
