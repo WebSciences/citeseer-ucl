@@ -1,0 +1,48 @@
+/*
+ * Right container
+ */
+#right-sidebar {
+    float: right;
+    width: 20%;
+    overflow: hidden;
+}
+
+/*
+ * constains the center and left containers
+ */
+#main-body {
+    float: left;
+    width: 80%;
+}
+
+/*
+ * Container to left content
+ */
+#left-sidebar {
+    float: left;
+    width: 25%;
+    overflow: hidden;
+}
+
+/*
+ * Container of all the main content
+ */
+#center-content {
+    float: right;
+    width: 75%;
+    min-width: 48em;
+    overflow: hidden;
+}
+
+#loginform fieldset {
+    border: none;
+}
+
+#loginform .actions {
+    text-align: center;
+}
+
+#login_error {
+    color: red;
+    text-align: center;
+}

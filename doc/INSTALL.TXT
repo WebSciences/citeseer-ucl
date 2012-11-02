@@ -1,0 +1,245 @@
+
+CiteSeerX Installation Guide
+IGC
+
+FOR STARTERS
+
+In order to install and use CiteSeerX there are a few things you will
+need other than what is contained in the distribution.  Specifically:
+
+- Java SDK 5.0 or higher from Sun
+- Perl 5.8 or higher
+- SQL database server: MySQL 5.0 or higher is supported but others may work
+- Java application container: Tomcat 6 is supported but others may work
+- Apache Axis2
+- Apache Solr 1.2 or higher
+- Apache Ant 1.6.5 or higher (in order to build the distribution)
+
+You should install the above software components before proceeding.
+
+INSTALLATION STEPS
+
+1.  Install the SQL databases
+
+    An installer is provided to help you install the databases on
+    a MySQL server.  Although CiteSeerX will work with any SQL
+    database server, MySQL is the only one that is supported
+    currently.  Assuming this is OK with you, you will first
+    need to install MySQL on a host that is accessible over the
+    network (or on localhost).
+
+    Once MySQL is installed, go to the install/ directory and execute
+
+       > perl installdb.pl
+
+    Please note that you must have the mysql client command on your
+    path for this script to work properly.
+
+    You will be prompted to enter the necessary information for
+    creating the CiteSeerX databases.  At the first step, you will
+    be asked to choose which databases you would like to install.
+    Please note that these databases may be installed on separate
+    hosts, with the exception that the csx and citegraph databases
+    MUST be installed on the same machine for proper operations.
+
+    If you choose to install the DOI database, please see the
+    INSTALL_DOI.TXT file for an explanation of the extra information
+    that is required.
+
+    Once you have entered all the information, the script will
+    automatically create your databases.
+
+2.  Configure Solr
+
+    Copy the files in resources/solr/ to your Solr conf/ directory
+    in order to enable the index structure expected by CiteSeerX.
+
+    NOTE: It is perfectly reasonable for development purposes to
+    install Solr in the same application container as the CiteSeerX
+    webapp, but for public deployments it is highly preferable to
+    maintain Solr in a separate application container in order to
+    restrict access to the Solr service to trusted hosts only.  This
+    can be acheived by firewall configuration or iptables if using
+    Linux.  External clients will not require direct access to the
+    Solr application - all Solr requests will be handled via internal
+    calls from the CiteSeerX web application.
+
+3.  Create your repository path(s)
+
+    You will need to create a directory that will contain the
+    document resources that you will eventually import into the
+    CiteSeerX system.  This can be an NFS mount or any other
+    distributed file system, but a local directory works fine for
+    starters.
+
+    You may use multiple repository locations, but one is fine.
+    For example, you may create a directory named /repositories/rep1
+    and give the user who will be running CiteSeerX ownership of
+    that directory.
+
+4.  Configure your installation
+
+    In the conf/ dir, copy the file csx.config.properties.template
+    to csx.config.properties.  Edit the csx.config.properties file
+    to supply values appropriate to your installation, keeping in
+    mind the database values you supplied in Step 1 and the Solr
+    URLs according to your installation in Step 2.
+
+    The repository mapping must be configured separately.  In the
+    files conf/applicationContext-csx-jdbc.xml and
+    web/citeseerx_webapp/WEB-INF/applicationContext-csx-jdbc.xml,
+    find the section that starts with
+
+      <bean id="repositoryMap" ...
+
+    and enter the repository path(s) you created in Step 2 in the
+    following format:
+
+      <property name="repositoryMap">
+        <map>
+          <entry key="KEY1" value="DIRECTORY1"/>
+          <entry key="KEY2" value="DIRECTORY2"/>
+          ...
+        </map>
+      </property>
+
+    where KEY fields are arbitrary names you choose (e.g., "rep1")
+    and DIRECTORY fields specify the absolute path to the repository
+    directories, e.g.
+
+         <entry key="rep1" value="/repositories/rep1"/>
+
+    Next, edit the conf/applicationContext-updates.xml to supply the
+    key of the repository that you would like to use for imports.  You
+    may change this value at any later time, but only one repository
+    can be active for importing resources at any given time.  Find the
+    section that starts with
+
+       <bean id="fileIngester" ...
+
+    and edit the "repositoryID" property value to reflect the key of
+    the repository you would like to use (e.g., "rep1").
+
+5.  Build the project
+
+    In the top level of the distribution directory, there should be
+    an Ant build script, build.xml, which contains the project build
+    targets.  To enable automated builds you will need Apache Ant
+    installed. In the same directory as the build.xml file, execute:
+
+       > ant
+       > ant doiserver
+
+6.  Install the DOI Server
+
+    Follow directions in INSTALL_DOI.TXT.
+
+7.  Install the CiteSeerX web application
+
+    For the CiteSeerX web application to work properly, you will need
+    the following jar files on your application container's class path
+    in addition to the standard J2EE jars:
+
+       log4j
+       mail
+       mysql-connector-java
+
+    There are several options for deploying the web application.  For
+    a standard deployment, just copy the citeseerx.war file from the
+    dist/webapp/ directory into the Tomcat 6 webapp directory.  You may
+    also copy the web/citeseerx_webapp directory to the same location,
+    or simply create a symbolic link to the web/citeseerx_webapp
+    directory (convenient for development purposes).
+
+    The name of the web application does not matter - "citeseerx" is
+    only used for convenience.  For public deployment, you may want
+    to deploy CiteSeerX as the ROOT application, for simpler path
+    structure.  The robots.txt file provided with the webapp distribution
+    assumes ROOT deployment, but this is an optional feature.
+
+9.  Test the installation
+
+    Start Tomcat and make sure there are no critical errors in the logs.
+    A detailed log will be created in the WEB-INF directory of the
+    CiteSeerX application, named citeseerx.log.  The default log4j
+    configuration in log4j.properties specifies full debug-level logging,
+    which is useful for teasing out any errors, but may be changed to
+    a stricter log level for production deployments.
+
+    If all goes well, you should be able to reach the search page at:
+
+       http://your.host:port/[APP_NAME]
+
+    where [APP_NAME] is the application named you installed as, e.g.
+    "citeseerx".  If you deployed as the ROOT application, this extra
+    path structure will not be necessary.
+
+    From here you can create a MyCiteSeer account, which will enable
+    you to further test the SMTP mail configuration specified in
+    csx.config.properties.
+
+    You won't be able to do anything particularly interesting yet, since
+    no content has been imported, so that should be the next step.
+
+10. Install a variant of the ingestion system
+
+    See instructions in INSTALL_INGESTION.TXT for details.  Since this
+    document is currently missing, skip to Step 12.
+
+11. Crawl for content
+
+    This step is not complete yet, so proceed to Step 11 with
+    pre-crawled data.
+
+12. Parse and import content
+
+    Several command line tools are provided that enable content
+    importation in a purely off-line and manual mode.  It is
+    recommended to start with these.
+
+    Until the ingestion installation documentation is done, you
+    may test using pre-parsed documents available in the project
+    repository.
+
+    Check out, export, or download the pre-parsed document tarball at:
+
+       http://cs1.ist.psu.edu/svn/citeseerx/resources/import_test.tgz
+
+    Extract the tarball by executing:
+
+       tar zxvf import_test.tgz
+
+    Now cd to the bin/ directory of the trunk CiteSeerX distribution
+    and set up your java home.  You can set the JAVA_HOME environment
+    variable or simply edit the DEFAULT_JAVA_HOME parameter in the
+    file "common".  This variable should be set so that
+    $JAVA_HOME/bin/java points to your java executable.
+
+    Your database, Solr and DOI servers must be operational to proceed.
+
+    Import the test documents with the following command:
+
+       ./batchImport /path/to/import_test
+
+    This will take a few minutes, and you should see output indicating
+    that records are being ingested.  Once that is done, build the
+    citation inference metadata with the command:
+
+       ./updateInference
+
+    Finally, build your Solr index with:
+
+       ./updateIndex
+
+    Optionally, you could also generate citation year histograms by
+    executing the "buildCharts" command, but there probably aren't
+    enough citations at this point to produce any charts of interest.
+    Currently, ChartDirector (
+
+    Now, go to your CiteSeerX web application URL and you should be
+    able to interact with the newly imported data.
+
+
+
+
+

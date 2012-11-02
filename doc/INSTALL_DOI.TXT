@@ -1,0 +1,72 @@
+
+DOI Server Installation Guide
+IGC
+
+To deploy the DOIServer utility, you will first need to install
+Tomcat 6 with Axis 2, as well as a mysql database server.
+Please refer to the Apache and mysql documentation
+for instructions on how to install those applications.
+
+Once that is complete, you can move on to the DOI service, which
+you may have guessed by now is an Axis2 web service.
+
+NOTE: It is perfectly reasonable for development purposes to
+install the DOI Server in the same application container as the
+CiteSeerX webapp, but for public deployments it is highly
+preferable to maintain the DOI Server in a separate application
+container in order to restrict access to trusted hosts only.  This
+can be acheived by firewall configuration or iptables if using
+Linux.  External clients will not require direct access to the
+DOI Server application.
+
+- Build the DOIServer distribution by executing 'ant doiserver'
+  at the top-level of the distribution directory tree.
+
+- First, install the DOI database on your mysql server.  To do this,
+  go into the "install" directory and run 'perl installdb.pl'.  Make
+  sure that the mysql command line utility is on your path before
+  executing this script.
+
+  You will be prompted to provide the necessary configuration and
+  at the end you should have the necessary database installed.
+
+- Edit the Tomcat server.xml, adding the following lines within the
+  "<Host>" block, editing the bracketed strings to the appropriate
+  values you specified during database installation:
+
+    <Context path="/axis2" docBase="axis2" debug="5"
+             reloadable="true" crossContext="true">
+      <Resource name="jdbc/DOIDB"
+                auth="Container"
+                type="javax.sql.DataSource"
+                maxActive="10"
+                maxIdle="30"
+                maxWait="10000"
+                username="[CSX USER]"
+                password="[CSX PASS]"
+                driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://[HOST]:3306/csxdoi?autoReconnect=true"
+      />
+    </Context>
+
+- Make sure that the mysql driver jar is in the lib directory of your
+  Tomcat 6 installation.
+
+- Copy the service package from dist/services/DOIServer/DOIServer.aar
+  to the axis2 WEB-INF/services/ directory.
+
+- The DOIServer should now be deployed.  You can test the installation by
+  using the Axis2 web interface to make sure the service has been
+  correctly registered and test the service directly using the perl client
+  in src/perl/DOIClient.
+
+  NOTE: Different versions of Axis seem to have different ideas about
+  what namespaces should be generated.  If testing results in a failure
+  something like:
+
+    "invalid URN http://doi.citeseerx.psu.edu/xsd, expected
+     http://doi.citeseerx.psu.edu"
+
+  then don't worry, just change the "doi.namespace" parameter to the
+  expected value and change the namespace in the client perl script
+  as well.  Test again, with hopefully positive results.

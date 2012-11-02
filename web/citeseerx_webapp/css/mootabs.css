@@ -1,0 +1,84 @@
+#tabs_container {
+    width:100%;
+    margin:0;
+    padding:0;
+    line-height:normal;
+    /*overflow: hidden;*/
+}
+
+#tabs_container .mootabs_title {
+    list-style-image: none;
+    list-style-type: none;
+    margin: 0px;
+    background:url("../images/tab_back_tr.gif") repeat-x bottom;
+    line-height:normal;
+    padding: 10px 0 0 10px;
+    float:left;
+    width: 99%;
+}
+
+#tabs_container .mootabs_title li {
+    float:left;
+    margin:0;
+    padding:0 0 0 9px;
+    display:inline;
+    background:url("../images/tab_norm_lft.gif") no-repeat left top;
+}
+
+#tabs_container .mootabs_title li.active {
+    float:left;
+    margin:0;
+    padding:0 0 0 9px;
+    display:inline;
+    background:url("../images/tab_on_lft_dk.gif") no-repeat left top;
+}
+
+#tabs_container .mootabs_title li div {
+    float:left;
+    color:#00b;
+    cursor:pointer;
+    display:block;
+    background:url("../images/tab_norm_rght_dk.gif") no-repeat right top;
+    margin:0;
+    padding:5px 15px 4px 6px;
+}
+
+#tabs_container .mootabs_title li.active div {
+    float:left;
+    color:#00b;
+    cursor:pointer;
+    display:block;
+    background:url("../images/tab_on_rght_dk.gif") no-repeat right top;
+    margin:0;
+    padding:5px 15px 5px 6px;
+}
+
+#tabs_container .mootabs_panel {
+    display: none;
+    position: relative;
+    width: 100%;
+    clear: both;
+    background-color:#fff;
+    margin:0;
+    padding: 0;
+}
+
+#tabs_container .mootabs_panel.active {
+    background-color: #fff;
+    display: block;
+}
+
+.panel_content {
+    width:100%;
+    margin:0;
+    border-top:none;
+    padding:0;
+    border-right:1px #ccc solid;
+    border-bottom:1px #ccc solid;
+    border-left:1px #02176e solid;
+    clear: both;
+}
+
+/*#tabs_container .mootabs_title li.over {
+    font-weight: bold;
+}*/

@@ -1,0 +1,93 @@
+#search_meta_box, #mcs_search_meta_box {
+    height:100px;
+    z-index:2;
+    top:0px;
+    right:20px;
+    text-align:right;
+}
+
+#search_tabs, #mcs_search_tabs {
+    width:405px;
+    margin:0;
+    padding:0;
+    line-height:normal;
+    overflow: hidden;
+}
+
+ #mcs_search_tabs {
+    width:305px;
+ }
+
+#search_tabs .mootabs_title, #mcs_search_tabs .mootabs_title {
+    list-style-image: none;
+    list-style-type: none;
+    margin: 0px;
+    background:url("../images/tab_back_tr.gif") repeat-x bottom;
+    padding:10px 0 0 10px;
+    float:left;
+    width: 100%;
+}
+
+#search_tabs .mootabs_title li, #mcs_search_tabs .mootabs_title li {
+    float:left;
+    margin:0;
+    padding:0 0 0 9px;
+    display:inline;
+    background:url("../images/tab_norm_lft_dk.gif")
+      no-repeat left top;
+}
+
+
+#search_tabs .mootabs_title li.active, #mcs_search_tabs .mootabs_title li.active {
+    float:left;
+    margin:0;
+    padding:0 0 0 9px;
+    display:inline;
+    background:url("../images/tab_on_lft_dk.gif") no-repeat left top;
+}
+
+#search_tabs .mootabs_title li div, #mcs_search_tabs .mootabs_title li div {
+    float:left;
+    color:#00b;
+    cursor:pointer;
+    display:block;
+    background:url("../images/tab_norm_rght_dk.gif") no-repeat right top;
+    margin:0;
+    padding:5px 15px 4px 6px;
+}
+
+#search_tabs .mootabs_title li.active div, #mcs_search_tabs .mootabs_title li.active div {
+    float:left;
+    color:#00b;
+    cursor:pointer;
+    display:block;
+    background:url("../images/tab_on_rght_dk.gif") no-repeat right top;
+    margin:0;
+    padding:5px 15px 5px 6px;
+}
+
+/*
+ * tab_container>search is used for the search textbox and button area.
+ */
+#search_tabs .mootabs_panel, #mcs_search_tabs .mootabs_panel {
+    display: none;
+    position: relative;
+    /*top: -1px;*/
+    clear: both;
+    overflow: hidden;
+    width:405px; /* width of search box equals width of logo, also see #center-content in  homelayout.css */
+    text-align:right;
+    background-color:#fff;
+    margin:0;
+    padding:0;
+    clear:both;
+}
+
+#mcs_search_tabs .mootabs_panel {
+        width:305px;
+}
+
+#search_tabs .mootabs_panel.active, #mcs_search_tabs .mootabs_panel {
+    background-color: #fff;
+    display: block;
+}

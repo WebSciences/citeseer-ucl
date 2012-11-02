@@ -1,0 +1,123 @@
+background {
+	COLOR: white
+}
+#pageContainer {
+	WIDTH: 100%
+}
+#header {
+	MARGIN-LEFT: 5%; MARGIN-RIGHT: 5%; BORDER-BOTTOM: #1831a5 thick groove; BACKGROUND-COLOR: white
+}
+#header H1 {
+	CLEAR: none; FONT-SIZE: 16px; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#header IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FLOAT: left; MARGIN: 10px 20px 2px 5px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+#header INPUT {
+	MARGIN-TOP: 20px; MARGIN-LEFT: 20px
+}
+#content {
+	CLEAR: none; MARGIN-LEFT: 27%; MARGIN-RIGHT: 5%
+}
+#content H1 {
+	CLEAR: right; FONT-SIZE: 17px; MARGIN-LEFT: 2%; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#content H2 {
+	CLEAR: right; FONT-SIZE: 15px; MARGIN-LEFT: 4%; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#content P {
+	CLEAR: none; FONT-SIZE: 17px; MARGIN-LEFT: 2%; COLOR: #003466; LINE-HEIGHT: 150%; FONT-FAMILY: "Times New Roman", Times, serif
+}
+#content A {
+	COLOR: black; TEXT-DECORATION: underline
+}
+#content A:hover {
+	COLOR: #69c; TEXT-DECORATION: underline
+}
+#content IMG {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 3px; BORDER-TOP: medium none; PADDING-LEFT: 1px; PADDING-BOTTOM: 0px; BORDER-LEFT: medium none; WIDTH: auto; PADDING-TOP: 0px; BORDER-BOTTOM: medium none
+}
+.arrow {
+	FLOAT: left
+}
+.retrieve {
+	FLOAT: none
+}
+#docInfo {
+	CLEAR: none; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 1em 0px; WIDTH: 100%; PADDING-TOP: 5px
+}
+#docHeader {
+	WIDTH: 100%
+}
+#docHeader H1 {
+	FONT-SIZE: 20px; MARGIN: 0px 0px 1em; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#leftColumn {
+	FLOAT: left; WIDTH: 50%
+}
+#leftColumn H1 {
+	FONT-SIZE: 14px; MARGIN: 0px 0px 1em 2%; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+.bold {
+	FONT-WEIGHT: bolder
+}
+#rightColumn {
+	MARGIN: 0px 0px 0px 60%; BORDER-LEFT: #d0ddee 2px solid; BORDER-BOTTOM: #d0ddee 4px solid; TEXT-ALIGN: right
+}
+#rightColumn H1 {
+	CLEAR: none; FONT-SIZE: 18px; MARGIN: 0px 0px 1em 1em; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#rightColumn H1 A {
+	CLEAR: none; FONT-SIZE: 15px; MARGIN: 0px 0px 1em 2%; COLOR: #660000; FONT-FAMILY: "Times New Roman", Times, serif; TEXT-DECORATION: underline
+}
+#rightColumn P A:hover {
+	COLOR: #69c
+}
+#leftbar {
+	BORDER-RIGHT: #d0ddee 0px solid; PADDING-RIGHT: 0em; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 1em; MARGIN-LEFT: 1em; WIDTH: 180px; MARGIN-RIGHT: 0em; PADDING-TOP: 1em; BORDER-BOTTOM: #d0ddee 4px solid; HEIGHT: auto
+}
+#leftbar H1 {
+	CLEAR: none; FONT-SIZE: 18px; MARGIN: 0px 0px 1em 2%; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+#leftbar P {
+	CLEAR: none; FONT-SIZE: 14px; MARGIN: 0px 0px 1em 2%; COLOR: #660000; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+#leftbar IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FLOAT: left; BORDER-LEFT: medium none; WIDTH: 10px; BORDER-BOTTOM: medium none
+}
+#leftbar UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #003466; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+#leftbar LI {
+	DISPLAY: block; FONT-SIZE: 12px; MARGIN: 0px 0px 1px; WIDTH: 160px; COLOR: #003466; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #c1d0e8
+}
+#leftbar A {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; BORDER-LEFT: #159 1em solid; WIDTH: 160px; COLOR: #003466; PADDING-TOP: 5px; BORDER-BOTTOM: #159 1px solid; BACKGROUND-COLOR: #c1d0e8; TEXT-DECORATION: none
+}
+#leftbar A:hover {
+	COLOR: #fff; BORDER-BOTTOM: #124 1px solid; BACKGROUND-COLOR: #69c; TEXT-DECORATION: none
+}
+#subnavlist LI {
+	MARGIN: 0px 0px 1px
+}
+#subnavlist LI A {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 30px; PADDING-BOTTOM: 5px; WIDTH: 145px; COLOR: #003466; PADDING-TOP: 5px; BACKGROUND-COLOR: #d0ddee; TEXT-DECORATION: none
+}
+#subnavlist LI A:hover {
+	COLOR: #fff; BACKGROUND-COLOR: #69c; TEXT-DECORATION: none
+}
+#footer {
+	CLEAR: both; BORDER-TOP: #d0ddee 3px solid
+}
+#footer P {
+	FONT-SIZE: 14px; COLOR: #003466; LINE-HEIGHT: 150%; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+#footer P A {
+	COLOR: #003466; TEXT-DECORATION: underline
+}
+#footer P A:hover {
+	COLOR: #69c; TEXT-DECORATION: underline
+}
+.clearboth {
+	CLEAR: both
+}

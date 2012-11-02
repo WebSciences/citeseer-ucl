@@ -1,0 +1,528 @@
+<!DOCTYPE web-app PUBLIC
+    "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <icon>
+    <small-icon>images/small-logo.gif</small-icon>
+    <large-icon>images/logo.gif</large-icon>
+    </icon>
+    <display-name>Heritrix Console</display-name>
+    <description>Heritrix Administration Console</description>
+    <filter> 
+        <filter-name>RootFilter</filter-name> 
+        <filter-class>org.archive.crawler.admin.ui.RootFilter</filter-class> 
+        <init-param>
+            <param-name>rootFilter.redirectTo</param-name>
+            <param-value>/index.jsp</param-value>
+        </init-param>
+    </filter> 
+    <filter-mapping> 
+        <filter-name>RootFilter</filter-name> 
+        <url-pattern>/</url-pattern> 
+    </filter-mapping> 
+    <listener>
+        <listener-class>org.archive.crawler.WebappLifecycle
+        </listener-class>
+    </listener>
+    <!--
+        This is configuration for the beanshell servlet. Uncomment this
+        servlet-name and the below 'bshservlet' servlet-mapping to enable.
+        Allows scripting Heritrix real-time, which is sweet, but also means
+        anyone who has access to the Heritrix UI also has script access to the
+        local filesystem.  Enable with caution.  For example, enable only in a
+        UI that is accessible from localhost only.
+
+    <servlet>
+        <servlet-name>bshservlet</servlet-name>
+        <servlet-class>bsh.servlet.BshServlet</servlet-class>
+    </servlet>
+    -->
+
+    
+<!--
+Automatically created by Tomcat JspC.
+Place this fragement in the web.xml before all icon, display-name,
+description, distributable, and context-param elements.
+-->
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.help.webui_0002dprefs_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.help.webui_0002dprefs_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.help.codes_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.help.codes_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.help.regexpr_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.help.regexpr_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.overview_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.per.overview_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.configure_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.per.configure_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.submodules_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.per.submodules_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.criteria_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.refinements.criteria_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.overview_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.refinements.overview_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.configure_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.refinements.configure_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.submodules_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.refinements.submodules_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.basedon_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.basedon_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.viewseeds_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.viewseeds_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.clearperhost_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.clearperhost_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.configure_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.configure_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.new_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.new_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.vieworder_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.vieworder_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.journal_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.journal_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.resumefromjob_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.resumefromjob_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.modules_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.modules_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.submodules_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.submodules_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.recovery_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs.recovery_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.console.frontier_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.console.frontier_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.console.action_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.console.action_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.console.shutdown_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.console.shutdown_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.console.alerts_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.console.alerts_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.console.readalert_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.console.readalert_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.profiles_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.profiles_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.crawljob_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports.crawljob_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.seeds_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports.seeds_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.frontier_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports.frontier_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.processors_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports.processors_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.threads_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports.threads_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.reports_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.reports_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.login_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.login_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.jobs_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.setup_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.setup_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.index_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.index_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.about_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.about_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.local_0002dinstances_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.local_0002dinstances_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.logs_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.logs_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.iframes.xml_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.iframes.xml_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.error_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.error_jsp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>org.archive.crawler.jspc.admin.help_jsp</servlet-name>
+		<servlet-class>org.archive.crawler.jspc.admin.help_jsp</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.help.webui_0002dprefs_jsp</servlet-name>
+		<url-pattern>/help/webui-prefs.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.help.codes_jsp</servlet-name>
+		<url-pattern>/help/codes.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.help.regexpr_jsp</servlet-name>
+		<url-pattern>/help/regexpr.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.overview_jsp</servlet-name>
+		<url-pattern>/jobs/per/overview.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.configure_jsp</servlet-name>
+		<url-pattern>/jobs/per/configure.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.per.submodules_jsp</servlet-name>
+		<url-pattern>/jobs/per/submodules.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.criteria_jsp</servlet-name>
+		<url-pattern>/jobs/refinements/criteria.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.overview_jsp</servlet-name>
+		<url-pattern>/jobs/refinements/overview.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.configure_jsp</servlet-name>
+		<url-pattern>/jobs/refinements/configure.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.refinements.submodules_jsp</servlet-name>
+		<url-pattern>/jobs/refinements/submodules.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.basedon_jsp</servlet-name>
+		<url-pattern>/jobs/basedon.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.viewseeds_jsp</servlet-name>
+		<url-pattern>/jobs/viewseeds.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.clearperhost_jsp</servlet-name>
+		<url-pattern>/jobs/clearperhost.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.configure_jsp</servlet-name>
+		<url-pattern>/jobs/configure.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.new_jsp</servlet-name>
+		<url-pattern>/jobs/new.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.vieworder_jsp</servlet-name>
+		<url-pattern>/jobs/vieworder.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.journal_jsp</servlet-name>
+		<url-pattern>/jobs/journal.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.resumefromjob_jsp</servlet-name>
+		<url-pattern>/jobs/resumefromjob.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.modules_jsp</servlet-name>
+		<url-pattern>/jobs/modules.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.submodules_jsp</servlet-name>
+		<url-pattern>/jobs/submodules.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs.recovery_jsp</servlet-name>
+		<url-pattern>/jobs/recovery.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.console.frontier_jsp</servlet-name>
+		<url-pattern>/console/frontier.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.console.action_jsp</servlet-name>
+		<url-pattern>/console/action.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.console.shutdown_jsp</servlet-name>
+		<url-pattern>/console/shutdown.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.console.alerts_jsp</servlet-name>
+		<url-pattern>/console/alerts.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.console.readalert_jsp</servlet-name>
+		<url-pattern>/console/readalert.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.profiles_jsp</servlet-name>
+		<url-pattern>/profiles.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.crawljob_jsp</servlet-name>
+		<url-pattern>/reports/crawljob.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.seeds_jsp</servlet-name>
+		<url-pattern>/reports/seeds.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.frontier_jsp</servlet-name>
+		<url-pattern>/reports/frontier.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.processors_jsp</servlet-name>
+		<url-pattern>/reports/processors.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports.threads_jsp</servlet-name>
+		<url-pattern>/reports/threads.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.reports_jsp</servlet-name>
+		<url-pattern>/reports.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.login_jsp</servlet-name>
+		<url-pattern>/login.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.jobs_jsp</servlet-name>
+		<url-pattern>/jobs.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.setup_jsp</servlet-name>
+		<url-pattern>/setup.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.index_jsp</servlet-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.about_jsp</servlet-name>
+		<url-pattern>/about.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.local_0002dinstances_jsp</servlet-name>
+		<url-pattern>/local-instances.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.logs_jsp</servlet-name>
+		<url-pattern>/logs.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.iframes.xml_jsp</servlet-name>
+		<url-pattern>/iframes/xml.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.error_jsp</servlet-name>
+		<url-pattern>/error.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>org.archive.crawler.jspc.admin.help_jsp</servlet-name>
+		<url-pattern>/help.jsp</url-pattern>
+	</servlet-mapping>
+
+<!--
+All session-config, mime-mapping, welcome-file-list, error-page, taglib,
+resource-ref, security-constraint, login-config, security-role,
+env-entry, and ejb-ref elements should follow this fragment.
+-->
+
+
+    <!--
+    <servlet-mapping>
+        <servlet-name>bshservlet</servlet-name>
+        <url-pattern>/bsh</url-pattern>
+    </servlet-mapping>
+    -->
+    <session-config>
+        <!--Make timeout be a day-long-->
+        <session-timeout>1440</session-timeout>
+    </session-config>
+    <security-constraint>
+        <display-name>Heritrix Console Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Heritrix Console JSP pages</web-resource-name>
+            <url-pattern>*.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Scripting Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Scripting</web-resource-name>
+            <url-pattern>/bsh</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login.jsp?action=redirect</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>Role used to get access to the Heritrix Console.
+        </description>
+        <role-name>admin</role-name>
+    </security-role>
+</web-app>
